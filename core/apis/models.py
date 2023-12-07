@@ -19,6 +19,9 @@ class Company(models.Model):
     create_At = models.DateTimeField(auto_now=True)
     is_Active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.name + self.location
+
 
 # Employee Models
 class Employee(models.Model):
