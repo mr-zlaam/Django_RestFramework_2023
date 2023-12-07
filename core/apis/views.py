@@ -8,3 +8,8 @@ from apis.serializers import *
 class CompanyViewsSet(viewsets.ModelViewSet):
     queryset = Company.objects.all()
     serializer_class = Company_serializers
+
+
+class EmployeeViewsSet(viewsets.ModelViewSet):
+    queryset = Employee.objects.all()
+    serializer_class = Employee_serializers
