@@ -21,3 +21,18 @@ class Company(models.Model):
 
 
 # Employee Models
+class Employee(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=254)
+    adress = models.CharField(max_length=200)
+    phone = models.CharField(max_length=11)
+    about = models.TextField()
+    positon = models.CharField(
+        max_length=100,
+        choices=(
+            ("Manager", "manager"),
+            ("Software Developer", "Software Developer"),
+            ("Project Leader", "Project leader"),
+        ),
+    )
+    company_id = models.ForeignKey(Company, on_delete=models.CASCADE)
